@@ -15,8 +15,8 @@
   
 ### Association
 
-- has_many :items, dependent: :destroy
-- has_many :orders, dependent: :destroy
+- has_many :items
+- has_many :orders
 
 
 ## items テーブル
