@@ -16,7 +16,5 @@ class User < ApplicationRecord
   validates :password,
             format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'is invalid. Include both letters and numbers' }
 
-  # PASSWORD_REGEX = /\A(?=.*?[A-z])(?=.*?[\d])[A-z\d]+\z/i.freeze # 半角英数混合1字以上
-  # ZENKAKU_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/.freeze # 全角ひらカタ漢字
-  # KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze # 全角カナ
+  has_many :items
 end
