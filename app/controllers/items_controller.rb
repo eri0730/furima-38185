@@ -56,8 +56,8 @@ class ItemsController < ApplicationController
 
   def contributor_confirmation
     redirect_to root_path unless current_user == @item.user && @item.order.blank?
-    #unless current_user == @item.user && @item.order.blank?
-      #redirect_to root_path
-    #end   
+    # unless current_user == @item.user && @item.order.blank?
+    # redirect_to root_path
+    # end
   end
 end
