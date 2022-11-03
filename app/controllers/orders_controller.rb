@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: :index
   before_action :item_find, only: [:index, :create]
-  before_action :move_to_root, only: :index
+  before_action :move_to_root, only: [:index, :create]
 
   def index
     @order_destination = OrderDestination.new
@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
   end
 
   def move_to_root
-    if current_user == @item.user 
+    if current_user == @item.user || @item.order.present?
      redirect_to root_path
     end  
   end  
